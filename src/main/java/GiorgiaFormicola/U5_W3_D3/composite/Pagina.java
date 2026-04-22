@@ -1,6 +1,6 @@
 package GiorgiaFormicola.U5_W3_D3.composite;
 
-public class Pagina implements Component {
+public class Pagina implements ComponenteLibro {
     @Override
     public int getPages() {
         return 1;

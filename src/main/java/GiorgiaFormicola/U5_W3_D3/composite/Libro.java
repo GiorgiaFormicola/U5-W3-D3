@@ -1,10 +1,13 @@
 package GiorgiaFormicola.U5_W3_D3.composite;
 
+import lombok.Getter;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class Libro implements Component {
-    private List<Component> children = new ArrayList<>();
+@Getter
+public class Libro {
+    private List<ComponenteLibro> componentiLibro = new ArrayList<>();
     private List<String> autori;
     private double price;
 
@@ -13,18 +16,20 @@ public class Libro implements Component {
         this.price = price;
     }
 
-    public void add(Component child) {
-        this.children.add(child);
+    public void add(ComponenteLibro componente) {
+        this.componentiLibro.add(componente);
     }
 
-    @Override
     public int getPages() {
-        return children.stream().mapToInt(child -> child.getPages()).sum();
+        return componentiLibro.stream().mapToInt(componente -> componente.getPages()).sum();
     }
 
-    @Override
     public void print() {
-        System.out.println("LIBRO");
-        children.stream().forEach(child -> child.print());
+        if (this.getPages() == 1) System.out.println("LIBRO (" + getPages() + " pagina)");
+        else System.out.println("LIBRO (" + getPages() + " pagine)");
+        System.out.println("Autori: " + String.join(", ", getAutori()));
+        System.out.println("Prezzo: $" + getPrice());
+        System.out.println("");
+        componentiLibro.stream().forEach(componente -> componente.print());
     }
 }

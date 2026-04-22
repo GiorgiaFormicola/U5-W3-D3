@@ -3,21 +3,22 @@ package GiorgiaFormicola.U5_W3_D3.composite;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Sezione implements Component {
-    private List<Component> children = new ArrayList<>();
+public class Sezione implements ComponenteLibro {
+    private List<ComponenteLibro> componenteLibro = new ArrayList<>();
 
-    public void add(Component child) {
-        this.children.add(child);
+    public void add(ComponenteLibro componente) {
+        this.componenteLibro.add(componente);
     }
 
     @Override
     public int getPages() {
-        return children.stream().mapToInt(child -> getPages()).sum();
+        return componenteLibro.stream().mapToInt(componente -> componente.getPages()).sum();
     }
 
     @Override
     public void print() {
-        System.out.println("SEZIONE");
-        children.stream().forEach(child -> child.print());
+        if (this.getPages() == 1) System.out.println("SEZIONE (" + getPages() + " pagina)");
+        else System.out.println("SEZIONE (" + getPages() + " pagine)");
+        componenteLibro.stream().forEach(componente -> componente.print());
     }
 }

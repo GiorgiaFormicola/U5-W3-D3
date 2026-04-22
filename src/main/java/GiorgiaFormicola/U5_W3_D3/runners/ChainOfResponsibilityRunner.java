@@ -16,7 +16,9 @@ public class ChainOfResponsibilityRunner implements CommandLineRunner {
         Tenente tenente = new Tenente(capitano);
 
 
-        CheckStipendioHandler.checkStipendio(6000, tenente);
+        /*CheckStipendioHandler.checkStipendio(6000, tenente);*/
+
+        tenente.checkStipendio(1050);
 
 
         System.out.println("\n------------- FINE ESERCIZIO CHAIN OF RESPONSIBILITY -------------");
