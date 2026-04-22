@@ -4,16 +4,18 @@ import GiorgiaFormicola.U5_W3_D3.composite.Libro;
 import GiorgiaFormicola.U5_W3_D3.composite.Pagina;
 import GiorgiaFormicola.U5_W3_D3.composite.Sezione;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Component
+@Order(2)
 public class CompositeRunner implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
-        System.out.println("\n------------- INIZIO ESERCIZIO COMPOSITE -------------\n");
+        System.out.println("\n------------- INIZIO ESERCIZIO COMPOSITE -------------");
         List<String> autori = new ArrayList<>(List.of("Aldo", "Giovanni", "Giacomo"));
         Libro libro = new Libro(autori, 20);
 

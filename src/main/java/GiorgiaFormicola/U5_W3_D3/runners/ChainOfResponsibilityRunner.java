@@ -2,9 +2,11 @@ package GiorgiaFormicola.U5_W3_D3.runners;
 
 import GiorgiaFormicola.U5_W3_D3.chainOfResponsibility.*;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 @Component
+@Order(3)
 public class ChainOfResponsibilityRunner implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
@@ -15,12 +17,8 @@ public class ChainOfResponsibilityRunner implements CommandLineRunner {
         Capitano capitano = new Capitano(maggiore);
         Tenente tenente = new Tenente(capitano);
 
-
         /*CheckStipendioHandler.checkStipendio(6000, tenente);*/
 
         tenente.checkStipendio(1050);
-
-
-        System.out.println("\n------------- FINE ESERCIZIO CHAIN OF RESPONSIBILITY -------------");
     }
 }

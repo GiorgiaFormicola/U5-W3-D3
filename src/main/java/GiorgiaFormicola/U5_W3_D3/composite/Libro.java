@@ -25,11 +25,7 @@ public class Libro {
     }
 
     public void print() {
-        if (this.getPages() == 1) System.out.println("LIBRO (" + getPages() + " pagina)");
-        else System.out.println("LIBRO (" + getPages() + " pagine)");
-        System.out.println("Autori: " + String.join(", ", getAutori()));
-        System.out.println("Prezzo: $" + getPrice());
-        System.out.println("");
+        System.out.println("LIBRO (pagine: " + getPages() + " | autori: " + String.join(", ", getAutori()) + " | prezzo: $" + getPrice() + ")");
         componentiLibro.stream().forEach(componente -> componente.print());
     }
 }
