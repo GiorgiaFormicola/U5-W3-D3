@@ -1,18 +1,13 @@
 package GiorgiaFormicola.U5_W3_D3.runners;
 
-import GiorgiaFormicola.U5_W3_D3.adapter.Info;
-import GiorgiaFormicola.U5_W3_D3.adapter.InfoAdapter;
-import GiorgiaFormicola.U5_W3_D3.adapter.UserData;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
-
-import java.text.SimpleDateFormat;
 
 @Component
 public class AdapterRunner implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
-        System.out.println("\n------------- INIZIO ESERCIZIO ADAPTER -------------");
+        /*System.out.println("\n------------- INIZIO ESERCIZIO ADAPTER -------------");
 
         UserData userData = new UserData();
 
@@ -34,6 +29,6 @@ public class AdapterRunner implements CommandLineRunner {
 
         userData.getData(userAdaptedInfo);
 
-        System.out.println("\n------------- FINE ESERCIZIO ADAPTER -------------");
+        System.out.println("\n------------- FINE ESERCIZIO ADAPTER -------------");*/
     }
 }
